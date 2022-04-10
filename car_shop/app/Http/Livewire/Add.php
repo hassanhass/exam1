@@ -27,7 +27,7 @@ class Add extends Component
             'is_available' => $this->is_available,
             'price' => $this->price
         ]);
-      $this->emitTo('add', '$refresh');
+      $this->emitUp('$refresh');
         $this->reset();
     }
     public function render()
