@@ -7,25 +7,9 @@ use App\Models\Car as CarModel;
 class Show extends Component
 {
     public $name, $model, $color, $is_available=true, $price, $edit_id;
-    protected $rules = [
-        'name' => 'required',
-        'model' => 'required',
-        'color' => 'required',
-        'is_available' => 'required',
-        'price' => 'required'
-    ];
-    public function addCars()
-{
-    $this->validate();
-    CarModel::create([
-        'name' => $this->name,
-        'model' => $this->model,
-        'color' => $this->color,
-        'is_available' => $this->is_available,
-        'price' => $this->price
-    ]);
-    $this->reset();
-}
+    protected $listeners = ['$refresh'];
+   
+
 
 public function editCars($id)
 {
@@ -38,7 +22,7 @@ public function editCars($id)
 }
 public function updateCars($id)
 {
-    $this->validate();
+
     $car = CarModel::findOrfail($id);
     $car->name = $this->name;
     $car->model = $this->model;

@@ -18,7 +18,7 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased bg-gray-300">
         <x-jet-banner />
 
         <div class="min-h-screen bg-gray-100">
@@ -34,7 +34,7 @@
             @endif
 
             <!-- Page Content -->
-            <div class="container mx-auto m-10 bg-gray-200">
+            <div class=" container mx-auto mt-4">
             <main>
                 {{ $slot }}
             </main>
